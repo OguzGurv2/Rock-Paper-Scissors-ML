@@ -1,0 +1,56 @@
+{
+    "game_1": {
+        "winner": "computer",
+        "player_points": 0,
+        "computer_points": 2,
+        "rounds": {
+            "round_1": {
+                "winner": "draw",
+                "computer": "Rock",
+                "player": "Rock"
+            },
+            "round_2": {
+                "winner": "computer",
+                "computer": "Scissors",
+                "player": "Paper"
+            },
+            "round_3": {
+                "winner": "draw",
+                "computer": "Scissors",
+                "player": "Scissors"
+            },
+            "round_4": {
+                "winner": "computer",
+                "computer": "Rock",
+                "player": "Scissors"
+            }
+        }
+    },
+    "game_2": {
+        "winner": "player",
+        "player_points": 2,
+        "computer_points": 1,
+        "rounds": {
+            "round_1": {
+                "winner": "computer",
+                "computer": "Rock",
+                "player": "Scissors"
+            },
+            "round_2": {
+                "winner": "player",
+                "computer": "Rock",
+                "player": "Paper"
+            },
+            "round_3": {
+                "winner": "draw",
+                "computer": "Paper",
+                "player": "Paper"
+            },
+            "round_4": {
+                "winner": "player",
+                "computer": "Rock",
+                "player": "Paper"
+            }
+        }
+    }
+}
