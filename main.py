@@ -7,8 +7,6 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
-# Same winner list and one-hot encoding functions
-
 winner_list = {
     "computer": -1,
     "draw": 0,
@@ -60,12 +58,10 @@ def train_model():
         print("Less than 6 rounds in history. Switching to random mode.")
         return None
 
-    # Split data and train model
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
     model = DecisionTreeClassifier()
     model.fit(X_train, y_train)
 
-    # Evaluate model
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
     print(f"Accuracy: {accuracy}")
@@ -75,7 +71,7 @@ def train_model():
 # Function to predict the next move
 def predict_next_move(model, player_move_encoded):
     if model:
-        last_computer_move = random.randint(0, 2)  # Fallback move if model isn't trained yet
+        last_computer_move = random.randint(0, 2) 
         X_last_move = np.array(player_move_encoded + one_hot_encode_move(last_computer_move)).reshape(1, -1)
         predicted_outcome = model.predict(X_last_move)
 
@@ -129,7 +125,6 @@ def main(choice):
 
             model = train_model()
 
-            # Play the rounds
             player_win_count, computer_win_count, round_num = game_round(
                 player_win_count, computer_win_count, round_num, model, rounds
             )
